@@ -14,8 +14,9 @@ async function fetchToken(URL) {
   });
   const json = await data.json();
   const tokens = json.map((e) => {
-    const {symbol, name, image, current_price:price} = e;
+    const {id, symbol, name, image, current_price:price} = e;
     return {
+      id,
       symbol,
       name,
       image,
@@ -42,9 +43,11 @@ function createContainer(name, className, parentName) {
 async function createCard(parentName) {
   const parent = document.querySelector(parentName);
   const tokenPrice = await fetchToken(URL);
+  console.log(tokenPrice);
   tokenPrice.forEach(e => {
-    const {symbol, name, image, price} = e;
+    const { id, symbol, name, image, price } = e;
     const card = createTag('div', 'tokenCard');
+    card.id = id;
     const img = createTag('img', 'tokenImg');
     img.src = image;
     img.alt = name;
