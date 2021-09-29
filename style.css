@@ -1,0 +1,76 @@
+:root {
+  --cinza: #576574;
+  --cinza-imperial: #222f3e;
+  --azul-claro: #54a0ff;
+  --cinza-claro: #c8d6e5;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: var(--cinza-imperial);
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.cards-container {
+  height: 800px;
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  line-height: 25px;
+}
+
+.tokenCard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-color: var(--cinza);
+  width: 200px;
+  height: 200px;
+  padding: 30px 10px;
+  border-radius: 50px;
+  margin: 15px;
+}
+
+.tokenImg {
+  width: 50px;
+}
+
+.tokenTitle {
+  color: aliceblue;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 1.45rem;
+}
+.tokenValue {
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  color: var(--cinza-claro);
+}
+.tokenValue .usd {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--azul-claro);
+  padding: 5px;
+}
