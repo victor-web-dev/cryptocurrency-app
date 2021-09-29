@@ -1,5 +1,16 @@
 import { createCard, createContainer, createTag, createChildTag, currencies } from './createElements.js';
 
+function clock(clockTag, calendarTag) {
+  const data = new Date();
+  const h = data.getHours() < 10 ? `0${data.getHours()}`: data.getHours();
+  const m = data.getMinutes() < 10 ? `0${data.getMinutes()}`: data.getMinutes();
+  const s = data.getSeconds() < 10 ? `0${data.getSeconds()}`: data.getSeconds();
+  const time = `${h}:${m}:${s}`;
+  const date = `${data.getDate()}/${data.getMonth()+1}/${data.getFullYear()}`;
+  clockTag.textContent = time;
+  calendarTag.textContent = date;
+}
+
 function createOptions() {
   createContainer('session', 'cards-options', '#app');
   //
@@ -26,15 +37,22 @@ function createOptions() {
   createContainer('div', 'options search-bar', '.cards-options');
   createChildTag('input', '.search-bar','', 'search-input');
    document.getElementById('search-input').setAttribute('placeholder', 'Search...');
-   
+
   //Clock
-  createContainer('div', 'options clock', '.cards-options');
+  createContainer('div', 'options date', '.cards-options');
+  createChildTag('span','.date','','clock');
+  createChildTag('span','.date','','calendar');
+  
+
+  setInterval( () => {
+    clock((document.getElementById('clock')), (document.getElementById('calendar')));
+  }, 1000);
 }
 
 function page() {
   //options area
   createOptions();
-
+  
   //coin cards, coin list and currency converter
   createContainer('session', 'cards-content', '#app')
   createContainer('div', 'cards-container', '.cards-content');
@@ -44,4 +62,5 @@ function page() {
 
 window.addEventListener('load', () => {
   page();
+  
 });
