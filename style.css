@@ -3,6 +3,8 @@
   --cinza-imperial: #222f3e;
   --azul-claro: #54a0ff;
   --cinza-claro: #c8d6e5;
+  --cyanite:#0abde3;
+  --white-not-so-white: #f4f4ff;
 }
 
 * {
@@ -19,10 +21,68 @@ body {
 
 #app {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
+}
+
+.cards-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  background-color: var(--cyanite);
+  margin-bottom: 50px
+}
+
+.options {
+  text-align: center;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.cards-options .date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-options .date #clock {
+  font-size: 2rem;
+  color: var(--white-not-so-white);
+  font-weight: bold;
+  border-width: 3px;
+  border-style: dotted;
+}
+
+.cards-options .date #calendar {
+  font-size: 0.8rem;
+}
+
+.cards-options .search-bar {
+  flex-grow: 2;
+}
+.cards-options .search-bar #search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.options select {
+  padding: 10px 40px;
+  text-transform: uppercase;
+}
+
+.cards-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
 
 .cards-container {
