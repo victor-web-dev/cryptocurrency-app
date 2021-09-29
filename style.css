@@ -3,6 +3,7 @@
   --cinza-imperial: #222f3e;
   --azul-claro: #54a0ff;
   --cinza-claro: #c8d6e5;
+  --cyanite:#0abde3;
 }
 
 * {
@@ -19,10 +20,48 @@ body {
 
 #app {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
+}
+
+.cards-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  background-color: var(--cyanite);
+  margin-bottom: 50px
+}
+
+.options {
+  text-align: center;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.cards-options .search-bar {
+  flex-grow: 2;
+}
+.cards-options .search-bar #search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.options select {
+  padding: 10px 40px;
+  text-transform: uppercase;
+}
+
+.cards-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .cards-container {
