@@ -29,3 +29,15 @@ export async function fetchToken(URL) {
 
   return tokens;
 }
+
+// function to be called insised selection events
+export async function updateCardsPrice(currency, lastValue) {
+  const currencyURL = URL
+    .replace(`currency=${lastValue}`, `currency=${currency}`);
+  const updatedToken = await fetchToken(currencyURL);
+  const cards = Array.from(document.getElementsByClassName('tokenCard'));
+  cards.forEach((e) => {
+    const info = updatedToken.find((t) => t.id === e.id);
+    e.lastChild.innerHTML = `<span class="currencyType">${currency}</span> ${info.price}`;
+  });
+}
