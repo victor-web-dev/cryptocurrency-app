@@ -13,17 +13,23 @@ function page() {
   createContainer('div', 'coin-list', '.cards-content');
 
   //events
-  let lastSelected = '';
+  let lastSelected = 'usd';
+  let currentValue = 'usd';
+  
   document.getElementById('currency')
     .addEventListener('mouseenter', (evt) => {
       const { selectedOptions } = evt.target;
       lastSelected = selectedOptions['0'].id;
-      //console.log(selectedOptions['0']);
     });
   document.getElementById('currency')
     .addEventListener('change', (evt) => {
-      updateCardsPrice(evt.target.value, lastSelected);
+     currentValue = evt.target.value;
+     updateCardsPrice(currentValue, lastSelected);
     });
+
+    setInterval(() => {
+      updateCardsPrice(currentValue, lastSelected);
+    }, 10000);
 }
 
 window.addEventListener('load', () => {
