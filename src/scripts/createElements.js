@@ -36,7 +36,7 @@ export async function createCard(parentName) {
     const h2 = createTag('h2', 'tokenTitle');
     h2.textContent = symbol;
     const tokenValue = createTag('p', 'tokenValue');
-    tokenValue.innerHTML = `<span class="usd">USD</span> ${price}`;
+    tokenValue.innerHTML = `<span class="currencyType">USD</span> ${price}`;
     card.appendChild(img);
     card.appendChild(h2);
     card.appendChild(tokenValue);
