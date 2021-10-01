@@ -55,8 +55,8 @@ body {
   font-size: 2rem;
   color: var(--white-not-so-white);
   font-weight: bold;
-  border-width: 3px;
-  border-style: dotted;
+  /* border-width: 3px;
+  border-style: dotted; */
 }
 
 .cards-options .date #calendar {
