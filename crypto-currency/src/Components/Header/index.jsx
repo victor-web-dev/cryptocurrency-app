@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import CurrencyContext from '../../Context/CurrencyContext';
+import './style.css';
 
 export default function Header() {
 
@@ -64,14 +65,14 @@ export default function Header() {
           name="search-input"
           id="search-input"
           placeholder='Pesquisar...'
+          className="header-searchBar"
           value={ searchBar }
           onChange={ onChangeHandler }
         />
-        {console.log(searchBar)}
       </div>
       <div>
-        <div>{ calendar }</div>
-        <div>{ clock }</div>
+        <div className="header-clock">{ clock }</div>
+        <div className="header-calendar">{ calendar }</div>
       </div>
     </header>
   );
