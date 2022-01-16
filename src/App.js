@@ -2,13 +2,16 @@ import React from 'react';
 import CurrencyProvider from './Context/CurrencyProvider';
 import Header from './Components/Header';
 import MainContent from './Components/MainContent';
+import NewsTab from './Components/NewsTab';
 
 function App() {
   return (
     <>
       <CurrencyProvider>
         <Header />
-        <MainContent />
+        <MainContent>
+          <NewsTab />
+        </MainContent>
       </CurrencyProvider>
     </>
   );
