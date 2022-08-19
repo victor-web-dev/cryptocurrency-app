@@ -1,20 +1,13 @@
 import React from 'react';
+import Router from "./Routes/Router"
 import CurrencyProvider from './Context/CurrencyProvider';
-import Header from './Components/Header';
-import MainContent from './Components/MainContent';
-import NewsTab from './Components/NewsTab';
 
 function App() {
   return (
-    <>
-      <CurrencyProvider>
-        <Header />
-        <MainContent>
-          <NewsTab />
-        </MainContent>
-      </CurrencyProvider>
-    </>
-  );
+    <CurrencyProvider>
+      <Router />
+    </CurrencyProvider>
+  )
 }
 
 export default App;
