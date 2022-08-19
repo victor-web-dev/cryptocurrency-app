@@ -14,7 +14,7 @@ export default function CurrencyProvider({ children }) {
 
   const fetchNews = async () => {
     try {
-      const api = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${process.env.REACT_APP_NEWS_API}`;
+      const api = process.env.REACT_APP_NEWS_API;
       const data = await fetch(api);
       const json = await data.json();
       setNews(json);
