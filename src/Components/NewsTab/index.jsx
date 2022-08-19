@@ -11,12 +11,13 @@ export default function NewsTab() {
   const loadedNews = news.status === 'ok' ? true : false;
 
   const renderNews = ({ articles }) => {
+    const limitTitleSize = 70;
     const slides = articles.map((e,i) => {
       const { title, urlToImage, url } = e;
       return (<SwiperSlide key={`slide-${i}`}>
         <a href={url} target="_blank" rel="noreferrer">
           <img src={urlToImage} alt={title} />
-          <h3>{title}</h3>
+          <h3>{`${title.slice(0, limitTitleSize)}...`}</h3>
         </a>
       </SwiperSlide>);
     });
