@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import CurrencyContext from "../../Context/CurrencyContext";
 import CoinCard from "./CoinCard";
+import OptionsMenu from "./helpers/OptionsMenu";
 
 export default function CoinsContainer() {
   const [coin, setCoin] = useState([]);
@@ -39,6 +40,12 @@ export default function CoinsContainer() {
 
   return (
     <section>
+      <OptionsMenu
+        setOrderBy={setOrder}
+        setItemsQuantity={setItemsPerPAge}
+        pageNumber={page}
+        setPageNumber={changePageHandler}
+      />
       {
         !loading ? (
           <h2>Loading...</h2>
