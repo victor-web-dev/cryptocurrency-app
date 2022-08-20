@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import CurrencyContext from './CurrencyContext';
 
 export default function CurrencyProvider({ children }) {
-  const [searchBar, setSearchBar] = useState('');
+  const [currency, setCurrency] = useState('');
   const [news, setNews] = useState({});
   const contextData = {
-    searchBar,
-    setSearchBar,
+    currency,
+    setCurrency,
     news,
     setNews,
   };
