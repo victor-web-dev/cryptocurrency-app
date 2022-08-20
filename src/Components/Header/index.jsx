@@ -6,7 +6,8 @@ export default function Header() {
 
   const [calendar, setCalendar] = useState('00/00/0000');
   const [clock, setClock] = useState('00:00:00');
-  const { searchBar, setSearchBar } = useContext(CurrencyContext);
+  const [searchBar, setSearchBar] = useState('');
+  const { setCurrency } = useContext(CurrencyContext);
 
   const renderCalendar = () => {
     const date = new Date();
@@ -32,8 +33,12 @@ export default function Header() {
     setClock(time);
   };
 
-  const onChangeHandler = ({ target }) => {
+  const onChangeSearchHandler = ({ target }) => {
     setSearchBar(target.value);
+  }
+
+  const onChangeCurrencyHandler = ({ target }) => {
+    setCurrency(target.value);
   }
 
   useEffect(() => {
@@ -54,9 +59,10 @@ export default function Header() {
   return (
     <header className="header-container">
       <div>
-        <select>
-          <option value="USD">USD</option>
-          <option value="BRL">BRL</option>
+        <select onChange={ onChangeCurrencyHandler }>
+          <option value="usd">USD</option>
+          <option value="brl">BRL</option>
+          <option value="jpy">JPY</option>
         </select>
       </div>
       <div>
@@ -67,7 +73,7 @@ export default function Header() {
           placeholder='Pesquisar...'
           className="header-searchBar"
           value={ searchBar }
-          onChange={ onChangeHandler }
+          onChange={  onChangeSearchHandler }
         />
       </div>
       <div>
