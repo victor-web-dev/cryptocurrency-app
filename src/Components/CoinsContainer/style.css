@@ -10,7 +10,10 @@
 .coinsContainer-container-assets {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
+  height: 60vh;
+  overflow-y: scroll;
 }
