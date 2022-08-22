@@ -51,7 +51,19 @@ export default function CoinsContainer() {
           <h2>Loading...</h2>
         ) : (
           coin.map((coin) => {
-            return <CoinCard />
+            const { id, symbol, name, image, current_price, high_24, low_24 } = coin;
+            return (
+            <CoinCard
+              key={id}
+              id={id}
+              symbol={symbol}
+              name={name}
+              image={image}
+              price={current_price}
+              high24={high_24}
+              low24={low_24}
+            />
+            )
           })
         )
       }
