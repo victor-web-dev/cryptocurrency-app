@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./style.css";
 
 export default function OptionsMenu(props) {
   const {
@@ -9,7 +10,7 @@ export default function OptionsMenu(props) {
     setPageNumber,
   } = props;
 
-  const onChangeOrderByHandler = ({target}) => {
+  const onChangeOrderByHandler = ({ target }) => {
     setOrderBy(target.value);
   }
 
@@ -18,7 +19,7 @@ export default function OptionsMenu(props) {
   }
 
   return (
-    <section>
+    <section className="coinsContainer-container-optionsMenu">
       <div>
         <label htmlFor="coinsContainer-order-by">
           Order By:

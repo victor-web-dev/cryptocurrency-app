@@ -1,0 +1,13 @@
+.coinsContainer-container-optionsMenu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.coinsContainer-container-optionsMenu > div > label > select {
+  margin-left: 5px;
+}
