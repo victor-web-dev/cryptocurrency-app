@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import CurrencyContext from './CurrencyContext';
 
 export default function CurrencyProvider({ children }) {
-  const [currency, setCurrency] = useState('');
+  const [currency, setCurrency] = useState('usd');
   const [news, setNews] = useState({});
   const contextData = {
     currency,
