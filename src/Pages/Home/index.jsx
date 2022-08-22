@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import MainContent from '../../Components/MainContent';
 import NewsTab from '../../Components/NewsTab';
+import CoinsContainer from '../../Components/CoinsContainer';
 
 export default function Home() {
 
@@ -17,6 +18,7 @@ export default function Home() {
     <>
       <MainContent>
         <NewsTab />
+        <CoinsContainer />
       </MainContent>
     </>
   );
