@@ -7,7 +7,7 @@ export default function CoinsContainer() {
   const [coin, setCoin] = useState([]);
   const { currency } = useContext(CurrencyContext);
   const [order, setOrder] = useState('market_cap_asc');
-  const [itemsPerPage, setItemsPerPAge] = useState(10);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
@@ -42,7 +42,7 @@ export default function CoinsContainer() {
     <section>
       <OptionsMenu
         setOrderBy={setOrder}
-        setItemsQuantity={setItemsPerPAge}
+        setItemsQuantity={setItemsPerPage}
         pageNumber={page}
         setPageNumber={changePageHandler}
       />
