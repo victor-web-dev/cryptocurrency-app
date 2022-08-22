@@ -1,17 +1,29 @@
-import React from "react";
+import React, {useContext} from "react";
 import PropTypes from "prop-types";
+import CurrencyContext from "../../Context/CurrencyContext";
 
 export default function CoinCard({ id, symbol, name, image, price, high24, low24 }) {
+  const { currency } = useContext(CurrencyContext);
   return (
     <div id={id}>
       <div>
         <img src={image} alt={name} />
-        <h2>{symbol}</h2>
-        <p>{price}</p>
+        <h2>{name}</h2>
+        <h4>{symbol}</h4>
+        <p>
+          <span>{currency}</span>
+          {price}
+        </p>
       </div>
       <div>
-        <span>{high24}</span>
-        <span>{low24}</span>
+        <label htmlFor="">
+          24h High:
+          <span>{high24 ? high24 : '00.00'}</span>
+        </label>
+        <label htmlFor="">
+          24h Low:
+          <span>{low24 ? low24 : '00.00'}</span>
+        </label>
       </div>
     </div>
     
