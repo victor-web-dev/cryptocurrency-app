@@ -51,3 +51,10 @@ export default function OptionsMenu(props) {
     </section>
   );
 }
+
+OptionsMenu.propTypes = {
+  setOrderBy: PropTypes.func.isRequired,
+  setItemsQuantity: PropTypes.func.isRequired,
+  pageNumber: PropTypes.number.isRequired,
+  setPageNumber: PropTypes.func.isRequired,
+}
