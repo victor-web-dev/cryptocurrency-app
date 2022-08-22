@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import CurrencyContext from "../../Context/CurrencyContext";
-import CoinCard from "./CoinCard";
+import CoinCard from "../CoinCard";
 import OptionsMenu from "./helpers/OptionsMenu";
 
 export default function CoinsContainer() {
@@ -47,11 +47,11 @@ export default function CoinsContainer() {
         setPageNumber={changePageHandler}
       />
       {
-        !loading ? (
+        loading ? (
           <h2>Loading...</h2>
         ) : (
           coin.map((coin) => {
-            const { id, symbol, name, image, current_price, high_24, low_24 } = coin;
+            const { id, symbol, name, image, current_price, high_24h, low_24h } = coin;
             return (
             <CoinCard
               key={id}
@@ -60,8 +60,8 @@ export default function CoinsContainer() {
               name={name}
               image={image}
               price={current_price}
-              high24={high_24}
-              low24={low_24}
+              high24={high_24h}
+              low24={low_24h}
             />
             )
           })
