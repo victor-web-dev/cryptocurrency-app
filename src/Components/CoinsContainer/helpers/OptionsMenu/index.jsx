@@ -44,9 +44,13 @@ export default function OptionsMenu(props) {
       </div>
 
       <div>
-        <span onChange={ () => setPageNumber("minus") }>&#60;</span>
+        <span>
+          <button onClick={ () => setPageNumber("minus") }>&#60;</button>
+        </span>
         <span>{pageNumber}</span>
-        <span onChange={ () => setPageNumber("plus") }>&#62;</span>
+        <span>
+          <button onClick={ () => setPageNumber("plus") }>&#62;</button>
+        </span>
       </div>
     </section>
   );
