@@ -19,6 +19,7 @@ export default function OptionsMenu(props) {
 
   return (
     <section>
+      <div>
         <label htmlFor="coinsContainer-order-by">
           Order By:
           <select id="coinsContainer-order-by" onChange={onChangeOrderByHandler}>
@@ -28,7 +29,9 @@ export default function OptionsMenu(props) {
             <option value="volume_desc">Volume Descending</option>
           </select>
         </label>
+      </div>
 
+      <div>
         <label htmlFor="coinsContainer-items-by-page">
           Assets per Page:
           <select id="coinsContainer-items-by-page" onChange={onchangeItemsPerPage}>
@@ -38,6 +41,13 @@ export default function OptionsMenu(props) {
             <option value="50">50</option>
           </select>
         </label>
-      </section>
+      </div>
+
+      <div>
+        <span onChange={ () => setPageNumber("minus") }>&#60;</span>
+        <span>{pageNumber}</span>
+        <span onChange={ () => setPageNumber("plus") }>&#62;</span>
+      </div>
+    </section>
   );
 }
