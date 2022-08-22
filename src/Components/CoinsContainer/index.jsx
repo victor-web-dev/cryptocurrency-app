@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import CurrencyContext from "../../Context/CurrencyContext";
 import CoinCard from "../CoinCard";
 import OptionsMenu from "./helpers/OptionsMenu";
+import "./style.css";
 
 export default function CoinsContainer() {
   const [coin, setCoin] = useState([]);
@@ -26,6 +27,7 @@ export default function CoinsContainer() {
   useEffect(() => {
     const fetchCoins = async () => {
       try {
+        setLoading(true);
         const api = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=${order}&per_page=${itemsPerPage}&page=${page}&sparkline=false`;
         const data = await fetch(api);
         const json = await data.json();
@@ -39,7 +41,7 @@ export default function CoinsContainer() {
   }, [currency, order, itemsPerPage, page]);
 
   return (
-    <section>
+    <section className="coinsContainer-container">
       <OptionsMenu
         setOrderBy={setOrder}
         setItemsQuantity={setItemsPerPage}
@@ -50,21 +52,25 @@ export default function CoinsContainer() {
         loading ? (
           <h2>Loading...</h2>
         ) : (
-          coin.map((coin) => {
-            const { id, symbol, name, image, current_price, high_24h, low_24h } = coin;
-            return (
-            <CoinCard
-              key={id}
-              id={id}
-              symbol={symbol}
-              name={name}
-              image={image}
-              price={current_price}
-              high24={high_24h}
-              low24={low_24h}
-            />
-            )
-          })
+          <section className="coinsContainer-container-assets">
+            {
+            coin.map((coin) => {
+              const { id, symbol, name, image, current_price, high_24h, low_24h } = coin;
+              return (
+              <CoinCard
+                key={id}
+                id={id}
+                symbol={symbol}
+                name={name}
+                image={image}
+                price={current_price}
+                high24={high_24h}
+                low24={low_24h}
+              />
+              )
+            })
+          }
+        </section>
         )
       }
     </section>
