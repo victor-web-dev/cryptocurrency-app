@@ -53,6 +53,6 @@ All of that can be seen in the main.js file inside [/electron](/electron/)
 Any further explanation about electron and how it works can be checked in their [website](https://www.electronjs.org/)
 
 
-## App HomePage
+## App Electron HomePage
  - That's how it looks like for now.
  ![gif](/readme_images/electron-app.gif)
