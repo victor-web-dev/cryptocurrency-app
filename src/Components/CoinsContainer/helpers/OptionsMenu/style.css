@@ -11,3 +11,12 @@
 .coinsContainer-container-optionsMenu > div > label > select {
   margin-left: 5px;
 }
+
+.coinsContainer-container-optionsMenu button {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px;
+}
