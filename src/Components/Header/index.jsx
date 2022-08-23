@@ -63,6 +63,7 @@ export default function Header() {
           <option value="usd">USD</option>
           <option value="brl">BRL</option>
           <option value="jpy">JPY</option>
+          <option value="eur">EUR</option>
         </select>
       </div>
       <div>
