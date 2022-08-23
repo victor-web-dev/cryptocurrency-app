@@ -1,0 +1,10 @@
+.main-container {
+  background-image: linear-gradient(0deg, rgba(2,0,36,0.8370074677391174) 0%, rgba(9,9,121,0.45042599809055506) 35%, rgba(0,47,255,0.7283812696560503) 100%),
+  url('../../images/bitcoin-background.jpg');
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* overflow-y: scroll; */
+}

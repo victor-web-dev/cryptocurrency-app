@@ -1,0 +1,29 @@
+.swiper {
+  /* border: 2px solid red; */
+  position: relative;
+  padding: 10px;
+  width: 100vw;
+  top: 60px;
+  height: 100px;
+  background-color: var(--alpha-black);
+}
+
+.swiper-slide {
+  /* text-size-adjust: auto; */
+  width: 10vw;
+}
+
+.swiper-slide img {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.swiper-slide a {
+  color: var(--anti-flash-white);
+  text-decoration: none;
+}
+
+.swiper-slide h3 {
+  font-size: 0.7rem;
+}
