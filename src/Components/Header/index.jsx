@@ -71,7 +71,7 @@ export default function Header() {
           type="text"
           name="search-input"
           id="search-input"
-          placeholder='Pesquisar...'
+          placeholder='Search...'
           className="header-searchBar"
           value={ searchBar }
           onChange={  onChangeSearchHandler }
