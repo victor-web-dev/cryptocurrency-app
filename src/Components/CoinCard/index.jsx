@@ -5,7 +5,7 @@ import "./style.css";
 
 export default function CoinCard({ id, symbol, name, image, price, high24, low24 }) {
   const { currency } = useContext(CurrencyContext);
-  const editName = name.split(0, 30);
+  const editName = `${name.slice(0, 25)}...`;
 
   return (
     <div id={id} className="coinCard-container">
@@ -14,7 +14,7 @@ export default function CoinCard({ id, symbol, name, image, price, high24, low24
       </div>
       <div className="coinCard-container-data">
           <span>
-            <h2>{editName}</h2>
+            <h2>{name.length > 25 ? editName : name}</h2>
             <h4>{symbol}</h4>
           </span>
           
