@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import CurrencyContext from '../../Context/CurrencyContext';
+import SearchInput from './SearchInput';
 import './style.css';
 
 export default function Header() {
 
   const [calendar, setCalendar] = useState('00/00/0000');
   const [clock, setClock] = useState('00:00:00');
-  const [searchBar, setSearchBar] = useState('');
   const { setCurrency } = useContext(CurrencyContext);
 
   const renderCalendar = () => {
@@ -33,9 +33,7 @@ export default function Header() {
     setClock(time);
   };
 
-  const onChangeSearchHandler = ({ target }) => {
-    setSearchBar(target.value);
-  }
+  
 
   const onChangeCurrencyHandler = ({ target }) => {
     setCurrency(target.value);
@@ -66,17 +64,7 @@ export default function Header() {
           <option value="eur">EUR</option>
         </select>
       </div>
-      <div>
-        <input
-          type="text"
-          name="search-input"
-          id="search-input"
-          placeholder='Search...'
-          className="header-searchBar"
-          value={ searchBar }
-          onChange={  onChangeSearchHandler }
-        />
-      </div>
+      <SearchInput />
       <div>
         <div className="header-clock">{ clock }</div>
         <div className="header-calendar">{ calendar }</div>
