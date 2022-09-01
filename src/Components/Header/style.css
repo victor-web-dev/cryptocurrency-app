@@ -7,6 +7,7 @@
   width: 100vw;
   position: fixed;
   box-shadow: 0px 12px 5px 0px rgba(0,0,0,0.75);
+  z-index: 4;
 }
 
 .header-searchBar {
@@ -24,4 +25,39 @@
 .header-clock {
   font-weight: 700;
   color: var(--anti-flash-white);
+}
+
+.header-search-result {
+  position: fixed;
+  z-index: 5;
+  background-color: rgba(255,255,255,0.9);
+  max-height: 200px;
+  width: 50%;
+  overflow-y: scroll;
+  margin-top: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.header-search-result ul li {
+  display: flex;
+  justify-content: start;
+  padding: 10px;
+  list-style: none;
+}
+
+.header-search-result ul li a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.header-search-result ul li a span {
+  margin-left: 5px;
+}
+
+.header-search-result ul li:hover {
+  background-color: rgba(128, 128, 128, 0.5);
 }

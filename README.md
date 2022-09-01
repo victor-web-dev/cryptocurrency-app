@@ -5,7 +5,8 @@
 
 ## About  
 
-This is a crypto currency finder that has everything that a person who deals with them needs. And by that I mean that this project will have News to check on global economical status, calculator, currency convertion and anything that i find useful to put in this project.
+This is a crypto currency finder that has everything that a person who deals with them needs. And by that I mean that this project will have News to check on global economical status, calculator, currency convertion and anything that i find useful to put in this project.  
+Currently it is possible to see the News, prices and search for a specific currency.
 
 
 ## How to Start :rocket:
