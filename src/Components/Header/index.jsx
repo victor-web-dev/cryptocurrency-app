@@ -65,7 +65,7 @@ export default function Header() {
         </select>
       </div>
       <SearchInput />
-      <div>
+      <div className='header-time-container'>
         <div className="header-clock">{ clock }</div>
         <div className="header-calendar">{ calendar }</div>
       </div>
