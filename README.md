@@ -36,11 +36,11 @@ __I'm using **npm** as example but it could be **yarn** as well__
 ## APIs used
 
 [NewsAPI](https://newsapi.org/)  
- > Free api but has limited requests
+ > Free api but has limited requests  
  > Get a key on their website and fill up the .env following the .env-example file
 
 [CoinGecko](https://www.coingecko.com/en/api/documentation)
-> This one is free as well.
+> This one is free as well.  
 > But is limited to 50 requests per minute.
 
 
